@@ -1,0 +1,29 @@
+{
+	"vehiclesList": [{
+		"auto": {
+			"img": "",
+			"list": "",
+			"btones": ""
+		},
+		"auto2": {
+			"img": "",
+			"list": "",
+			"btones": ""
+		},
+		"auto3": {
+			"img": "",
+			"list": "",
+			"btones": ""
+		},
+		"auto4": {
+			"img": "",
+			"list": "",
+			"btones": ""
+		},
+		"auto5": {
+			"img": "",
+			"list": "",
+			"btones": ""
+		}
+	}]
+}

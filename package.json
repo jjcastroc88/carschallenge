@@ -1,0 +1,32 @@
+{
+  "name": "carschallenge",
+  "version": "1.0.0",
+  "description": "mini challenge",
+  "main": "GruntFile.js",
+  "dependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-jasmine": "^1.1.0",
+    "grunt-contrib-sass": "^1.0.0",
+    "jasmine": "^2.5.3"
+  },
+  "devDependencies": {
+    "grunt-contrib-sass": "^1.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jjcastroc88/carschallenge.git"
+  },
+  "keywords": [
+    "jasmine",
+    "handlebars"
+  ],
+  "author": "David Londoño & Jose Castro",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jjcastroc88/carschallenge/issues"
+  },
+  "homepage": "https://github.com/jjcastroc88/carschallenge#readme"
+}
