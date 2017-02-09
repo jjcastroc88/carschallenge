@@ -1,3 +1,39 @@
+var jsonResponse;
+
+function getMenuItems(){
+  var xhr = new XMLHttpRequest();
+  xhr.open('GET', 'https://jsonplaceholder.typicode.com/users');
+  xhr.onload = function() {
+      if (xhr.status === 200) {
+        jsonResponse = xhr.responseText;
+          //alert('User\'s name is ' + xhr.responseText);
+          response();
+      }
+      else {
+          alert('Request failed.  Returned status of ' + xhr.status);
+      }
+  };
+  xhr.send();
+}
+
+function response(){
+  console.log(jsonResponse);
+  jsonResponse = {
+    car:[
+      {"id":1,"brand":"nissan"},
+      {"id":2,"brand":"renault"}
+    ]
+  };
+  var source = document.getElementById('entry-template').innerHTML;
+  var template = Handlebars.compile(source);
+  var compiledHTML = template(jsonResponse);
+  var dataContainer = document.getElementById('data-section');
+  dataContainer.innerHTML = compiledHTML;
+}
+
+getMenuItems();
+
+
 function ObserverList(){
   this.observerList = [];
 }
@@ -77,7 +113,6 @@ var controlCheckbox = document.getElementById( "mainCheckbox" ),
 
 // Extend the controlling checkbox with the Subject class
 extend( controlCheckbox, new Subject() );
-
 // Clicking the checkbox will trigger notifications to its observers
 controlCheckbox.onclick = function(){
   controlCheckbox.notify( controlCheckbox.checked );
@@ -87,7 +122,6 @@ console.log("this>"+addBtn);
 for(var i = 0; i < addBtn.length; i++){
   console.log("btn");
   addBtn[i].onchange = addNewObserver;
-
 }
 
 

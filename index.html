@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
 
-  <title>Card compative cars</title>
+  <title>Card cars</title>
   <meta name="description" content="The HTML5 Herald">
   <meta name="author" content="SitePoint">
   <link rel="stylesheet" href="css/main.css?v=1.0">
@@ -15,14 +15,30 @@
 
 <body>
   <section>
+    <div id="data-section">
+    </div>
+    <input type="checkbox" value="" />
   </section>
   <section>
+
   </section>
   <input name='' type="checkbox" class="addNewObserver" />
   <input name='' type="checkbox" class="addNewObserver" />
   <input id="mainCheckbox" type="checkbox"/>
   <div id="observersContainer">
   </div>
+  <script src="js/handlebars-v4.0.5.js"></script>
+  <script id="entry-template" type="text/x-handlebars-template">
+    {{#each car}}
+    <div class="entry">
+      <h1>{{id}}</h1>
+      <div class="body">
+       {{brand}}
+      </div>
+    </div>
+    {{/each}}
+  </script>
   <script src="js/main.js"></script>
+
 </body>
 </html>
