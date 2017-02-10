@@ -1,21 +1,16 @@
 var jsonResponse;
 
 function getMenuItems(){
-  var xhr = new XMLHttpRequest();
-  xhr.open('GET', '../data/options.json');
-  xhr.onload = function() {
-      if (xhr.status === 200) {
-        jsonResponse = xhr.responseText;
-          response();
-      }
-      else {
-          alert('Request failed.  Returned status of ' + xhr.status);
-      }
-  };
-  xhr.send();
+  
+    var hole = {};
+    var petio = new Petitioner();
+    hole = petio.ajax('data/options.json','GET');
+    console.log(hole);         
 }
 
-function response(){
+getMenuItems();
+
+/*function response(){
   var xhr = new XMLHttpRequest();
   xhr.open('GET', '../templates/menu.hbs');
   xhr.onload = function() {
@@ -150,3 +145,4 @@ function addNewObserver(){
   // Append the item to the container
   container.appendChild( check );
 }
+*/
