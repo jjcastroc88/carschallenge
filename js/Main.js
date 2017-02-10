@@ -6,7 +6,6 @@ function getMenuItems(){
   xhr.onload = function() {
       if (xhr.status === 200) {
         jsonResponse = xhr.responseText;
-          //alert('User\'s name is ' + xhr.responseText);
           response();
       }
       else {
@@ -17,23 +16,28 @@ function getMenuItems(){
 }
 
 function response(){
-  console.log(jsonResponse);
-  /*jsonResponse = {
-    car:[
-      {"label":1,"value":"nissan"},
-      {"label":2,"value":"renault"}
-    ]
-  };*/
-  var source = document.getElementById('entry-template').innerHTML;
-  var template = Handlebars.compile(source);
-  var compiledHTML = template(jsonResponse);
-  var dataContainer = document.getElementById('data-section');
-  dataContainer.innerHTML = compiledHTML;
+  var xhr = new XMLHttpRequest();
+  xhr.open('GET', '../templates/menu.hbs');
+  xhr.onload = function() {
+      if (xhr.status === 200) {
+        template= xhr.responseText;
+          //alert('template\'s name is ' + template);
+          jsonResponse = JSON.parse(jsonResponse);
+          var template = Handlebars.compile(template);
+          var compiledHTML = template(jsonResponse);
+          var dataContainer = document.getElementById('list-menu');
+          dataContainer.innerHTML = compiledHTML;
+      }
+      else {
+          alert('Request failed.  Returned status of ' + xhr.status);
+      }
+  };
+  xhr.send();
 }
 
 getMenuItems();
 
-
+//obserber
 function ObserverList(){
   this.observerList = [];
 }
@@ -117,7 +121,6 @@ extend( controlCheckbox, new Subject() );
 controlCheckbox.onclick = function(){
   controlCheckbox.notify( controlCheckbox.checked );
 };
-
 console.log("this>"+addBtn);
 for(var i = 0; i < addBtn.length; i++){
   console.log("btn");
@@ -127,7 +130,6 @@ for(var i = 0; i < addBtn.length; i++){
 
 
 // Concrete Observer
-
 function addNewObserver(){
   // Create a new checkbox to be added
   var check = document.createElement( "input" );
