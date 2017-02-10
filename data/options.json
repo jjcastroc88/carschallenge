@@ -1,27 +1,27 @@
 {
-	"vehicles": [{
-		"label": "",
-		"value": ""
+	car: [{
+		"label": "Zeta",
+		"value": "Nissan"
 	}, {
-		"label": "",
-		"value": ""
+		"label": "Clio",
+		"value": "Renault"
 	}, {
-		"label": "",
-		"value": ""
+		"label": "PathFinder",
+		"value": "Nissan"
 	}, {
-		"label": "",
-		"value": ""
+		"label": "Duster",
+		"value": "Renault"
 	}, {
-		"label": "",
-		"value": ""
+		"label": "Datsun",
+		"value": "Nissan"
 	}, {
-		"label": "",
-		"value": ""
+		"label": "Koleos",
+		"value": "Renault"
 	}, {
-		"label": "",
-		"value": ""
+		"label": "Sky Line",
+		"value": "Nissan"
 	}, {
-		"label": "",
-		"value": ""
+		"label": "Sandero",
+		"value": "Renault"
 	}]
 }

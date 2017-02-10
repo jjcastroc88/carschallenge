@@ -2,7 +2,7 @@ var jsonResponse;
 
 function getMenuItems(){
   var xhr = new XMLHttpRequest();
-  xhr.open('GET', 'https://jsonplaceholder.typicode.com/users');
+  xhr.open('GET', '../data/options.json');
   xhr.onload = function() {
       if (xhr.status === 200) {
         jsonResponse = xhr.responseText;
@@ -18,12 +18,12 @@ function getMenuItems(){
 
 function response(){
   console.log(jsonResponse);
-  jsonResponse = {
+  /*jsonResponse = {
     car:[
-      {"id":1,"brand":"nissan"},
-      {"id":2,"brand":"renault"}
+      {"label":1,"value":"nissan"},
+      {"label":2,"value":"renault"}
     ]
-  };
+  };*/
   var source = document.getElementById('entry-template').innerHTML;
   var template = Handlebars.compile(source);
   var compiledHTML = template(jsonResponse);
